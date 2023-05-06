@@ -1,0 +1,21 @@
+ul {
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    background-image: url('./89201b9d2b299dd694c2.svg');
+    height: max-content;
+    margin: 5px;
+  }
+
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 30px;
+    padding-top: 20px;
+    height: 50px;
+  }
+}
