@@ -82,20 +82,24 @@ const Dishes = () => {
       </div>
       <div className="row">
         {filteredDishes.map((dish) => (
-          <div key={dish.idMeal}>
-            <div className="col-sm-5 col-md-6">
-              <button type="button" className="btn btn-outline-light btn-rounded" onClick={() => handleDetailClick(dish.idMeal)}>
-                <img src={dish.strMealThumb} alt="meal-img" className="rounded-5 img-fluid " />
-              </button>
-              <div className="container-sm text-center">
-                <h5 className="">{dish.strMeal}</h5>
-                <FaHeart onClick={() => handleLikeClick(dish.idMeal)} />
-                <h5>
-                  {likes[dish.idMeal] || 0}
-                </h5>
+          <>
+            <div className="col-6 p-0" key={dish.idMeal}>
+              <div>
+                <button type="button" className="btn btn-outline-dark me-0" onClick={() => handleDetailClick(dish.idMeal)}>
+                  <img src={dish.strMealThumb} alt="meal-img" className="img-fluid " />
+                  <div className="text-center">
+                    <h6 className="">
+                      {dish.strMeal}
+                      {' '}
+                      <FaHeart onClick={() => handleLikeClick(dish.idMeal)} />
+                      {likes[dish.idMeal] || 0}
+                    </h6>
+                  </div>
+                </button>
               </div>
             </div>
-          </div>
+            <br />
+          </>
         ))}
       </div>
     </main>

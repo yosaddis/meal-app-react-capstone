@@ -1,12 +1,17 @@
-ul {
+li {
   list-style-type: none;
+  margin-top: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #cf5d89;
 }
 
 @media only screen and (max-width: 768px) {
   .wrapper {
-    background-image: url('./89201b9d2b299dd694c2.svg');
+    background-color: #ea4a88;
     height: max-content;
-    margin: 5px;
+    margin: 0;
   }
 
   .heading {
