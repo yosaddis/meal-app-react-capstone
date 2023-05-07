@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { fetchDishes } from '../redux/dishes/dishesSlice';
 import { fetchRecipe } from '../redux/recipe/recipeSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -85,12 +86,13 @@ const Dishes = () => {
           <>
             <div className="col-6 p-0" key={dish.idMeal}>
               <div>
-                <button type="button" className="btn btn-outline-dark me-0" onClick={() => handleDetailClick(dish.idMeal)}>
+                <button type="button" className="btn me-0" onClick={() => handleDetailClick(dish.idMeal)}>
+                  <span className=" d-flex justify-content-end p-0"><BsArrowRightCircle className="text-white p-0 " onClick={() => handleLikeClick(dish.idMeal)} /></span>
                   <img src={dish.strMealThumb} alt="meal-img" className="img-fluid " />
-                  <div className="text-center">
+                  <div className="text-white d-flex justify-content-end">
                     <h6 className="">
                       {dish.strMeal}
-                      {' '}
+                      {'\n '}
                       <FaHeart onClick={() => handleLikeClick(dish.idMeal)} />
                       {likes[dish.idMeal] || 0}
                     </h6>
