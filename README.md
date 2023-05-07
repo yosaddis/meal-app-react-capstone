@@ -117,6 +117,7 @@ Give a ⭐️ if you like this project!
 ## 🙏 Acknowledgements <a name="acknowledgements"></a>
 
 - [Microverse](https://www.microverse.org/)
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License <a name="license"></a>
 This project is [MIT](./LICENSE.md) licensed.
