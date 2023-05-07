@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { fetchDishes } from '../redux/dishes/dishesSlice';
 import { fetchRecipe } from '../redux/recipe/recipeSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -82,20 +83,25 @@ const Dishes = () => {
       </div>
       <div className="row">
         {filteredDishes.map((dish) => (
-          <div key={dish.idMeal}>
-            <div className="col-sm-5 col-md-6">
-              <button type="button" className="btn btn-outline-light btn-rounded" onClick={() => handleDetailClick(dish.idMeal)}>
-                <img src={dish.strMealThumb} alt="meal-img" className="rounded-5 img-fluid " />
-              </button>
-              <div className="container-sm text-center">
-                <h5 className="">{dish.strMeal}</h5>
-                <FaHeart onClick={() => handleLikeClick(dish.idMeal)} />
-                <h5>
-                  {likes[dish.idMeal] || 0}
-                </h5>
+          <>
+            <div className="col-6 p-0" key={dish.idMeal}>
+              <div>
+                <button type="button" className="btn me-0" onClick={() => handleDetailClick(dish.idMeal)}>
+                  <span className=" d-flex justify-content-end p-0"><BsArrowRightCircle className="text-white p-0 " onClick={() => handleLikeClick(dish.idMeal)} /></span>
+                  <img src={dish.strMealThumb} alt="meal-img" className="img-fluid " />
+                  <div className="text-white d-flex justify-content-end">
+                    <h6 className="">
+                      {dish.strMeal}
+                      {'\n '}
+                      <FaHeart onClick={() => handleLikeClick(dish.idMeal)} />
+                      {likes[dish.idMeal] || 0}
+                    </h6>
+                  </div>
+                </button>
               </div>
             </div>
-          </div>
+            <br />
+          </>
         ))}
       </div>
     </main>
